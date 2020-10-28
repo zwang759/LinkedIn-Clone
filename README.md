@@ -60,5 +60,5 @@
 
 
 ## App Architecture
-1. root folder contains the backend APIs built by <b> express <b/>
+1. root folder contains the backend APIs built by <b> express </b>
 2. client folder contains the frontend pages built by <b> react <b/>
