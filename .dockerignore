@@ -1,0 +1,9 @@
+node_modules
+Dockerfile.prod
+.dockerignore
+.gitignore
+.prettierrc
+docker-compose.yml
+client/node_modules
+client/Dockerfile.prod
+.idea

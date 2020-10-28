@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - "5000:5000"
+    restart: always
+    container_name: linkedin-clone-app
+    depends_on:
+      - redis
+    environment:
+      - NODE_ENV=production
+      - REDIS_HOST=redis
+
+  redis:
+    image: "redis:6.0.8"
+    ports:
+      - "6376:6376"
+    restart: always
+    container_name: linkedin-clone-cache
