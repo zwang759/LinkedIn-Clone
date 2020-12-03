@@ -21,7 +21,6 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.3",
     "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.0",
     "uuid": "^7.0.2",
@@ -50,6 +49,7 @@
   },
   "proxy": "http://localhost:5000",
   "devDependencies": {
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "redux-devtools-extension": "^2.13.8"
   }
 }

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import store from "../store";
 import {CLEAR_COMMENTS, CLEAR_POSTS, CLEAR_PROFILE, LOGOUT} from "../types/types";
 

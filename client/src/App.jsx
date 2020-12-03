@@ -1,23 +1,27 @@
-import React from "react";
+import React, {lazy, Suspense} from "react";
 import {Route, Switch} from "react-router-dom";
 import {connect} from "react-redux";
 import {loadUser, logout} from "./redux/actions/auth";
 import setAuthToken from "./redux/utils/setAuthToken";
 import GlobalStyles from "./styles/GlobalStyles";
 import Header from "./components/layout/appHeader";
-import Landing from "./components/landing";
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
 import PrivateRoute from "./components/routing/PrivateRoute";
-import Network from "./components/network";
-import Profile from "./components/profile/Profile";
-import People from "./components/result/people";
-import Dashboard from "./components/dashboard";
-import ProfileForm from "./components/profile-forms/ProfileForm";
-import Comments from "./components/comments/Comments";
-import NotFound from "./components/layout/notFound";
 import Alert from "./components/layout/alert";
-import Content from "./components/result/content/Content";
+import Spinner from "./components/layout/spinner";
+
+// Lazy load routes as necessary
+const Landing = lazy(() => import("./components/landing"));
+const Register = lazy(() => import("./components/auth/Register"));
+const Login = lazy(() => import("./components/auth/Login"));
+const Network = lazy(() => import("./components/network"));
+const Profile = lazy(() => import("./components/profile/Profile"));
+const People = lazy(() => import("./components/result/people"));
+const Dashboard = lazy(() => import("./components/dashboard"));
+const ProfileForm = lazy(() => import("./components/profile-forms/ProfileForm"));
+const Comments = lazy(() => import("./components/comments/Comments"));
+const NotFound = lazy(() => import("./components/layout/notFound"));
+const Content = lazy(() => import("./components/result/content/Content"));
+
 
 const App = ({loadUser, logout}) => {
   React.useEffect(() => {
@@ -37,19 +41,21 @@ const App = ({loadUser, logout}) => {
       <GlobalStyles />
       <Header />
       <Alert />
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
-        <PrivateRoute exact path="/mynetwork" component={Network} />
-        <PrivateRoute exact path="/profile/:id" component={Profile} />
-        <PrivateRoute exact path="/search/results/people" component={People} />
-        <PrivateRoute exact path="/search/results/content" component={Content} />
-        <PrivateRoute exact path="/dashboard" component={Dashboard} />
-        <PrivateRoute exact path="/create-profile" component={ProfileForm} />
-        <PrivateRoute exact path="/post/:id" component={Comments} />
-        <Route component={NotFound} />
-      </Switch>
+      <Suspense fallback={<Spinner />}>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+          <PrivateRoute exact path="/mynetwork" component={Network} />
+          <PrivateRoute exact path="/profile/:id" component={Profile} />
+          <PrivateRoute exact path="/search/results/people" component={People} />
+          <PrivateRoute exact path="/search/results/content" component={Content} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/create-profile" component={ProfileForm} />
+          <PrivateRoute exact path="/post/:id" component={Comments} />
+          <Route component={NotFound} />
+        </Switch>
+      </Suspense>
     </>
   );
 };
