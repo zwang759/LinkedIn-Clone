@@ -21,12 +21,12 @@ const NotPublic = ({setLoading, user}) => {
           <h2>An exact match for {user} could not be found.</h2>
         </Span>
         <p>The profile you're looking for isn't public or doesn't exist.
-          To search and filter other members, <Link to='/login' onClick={OnClick}>log in </Link> or <Link to='/register'
+          To search and filter other members, <Link to="/login" onClick={OnClick}>log in </Link> or <Link to="/register"
                                                                                                           onClick={OnClick}>join
             today. </Link></p>
         <Separator />
 
-        <Button component={Link} to='/' onClick={OnClick} variant="contained" color="primary">Back to home</Button>
+        <Button component={Link} to="/" onClick={OnClick} variant="contained" color="primary">Back to home</Button>
 
       </div>
     </Container>

@@ -89,7 +89,7 @@ const UploadPhoto = ({user, avatar, name, savedText, handleClose}) => {
                 />
               </Button> :
               <Grid container justify="center">
-                <img className={classes.media} src={preview} alt='' />
+                <img className={classes.media} src={preview} alt="" />
               </Grid>
             }
           </DialogContent>

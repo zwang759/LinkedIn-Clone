@@ -165,7 +165,7 @@ const EditAvatar = ({
         </Button>
         {avatar &&
         <Grid container justify="center">
-          <img src={avatar} alt='' />
+          <img src={avatar} alt="" />
         </Grid>
         }
       </DialogContent>

@@ -65,7 +65,7 @@ const ProfileGithub = ({username, getGithubRepos, repos, loadingRepos}) => {
       {title}
       {repos.map((repo) => (
         <CardContent key={repo.id}>
-          <CardActionArea component='a' href={repo.html_url} target="_blank" rel="noopener noreferrer">
+          <CardActionArea component="a" href={repo.html_url} target="_blank" rel="noopener noreferrer">
             <Typography variant="body1">
               {repo.name}
             </Typography>

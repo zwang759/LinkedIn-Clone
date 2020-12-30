@@ -5,7 +5,7 @@ import {SpinnerImage} from "./styles";
 const SpinnerSmall = () => (
   <SpinnerImage
     src={spinner}
-    alt='Loading...'
+    alt="Loading..."
   />
 );
 

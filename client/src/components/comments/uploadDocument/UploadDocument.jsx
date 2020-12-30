@@ -98,7 +98,7 @@ const UploadDocument = ({postId, commentTo, user, avatar, name, savedText, reply
                   src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${preview}`}
                   width="100%"
                   height="100%"
-                  frameBorder='0'
+                  frameBorder="0"
                 />
               </Grid>
             }

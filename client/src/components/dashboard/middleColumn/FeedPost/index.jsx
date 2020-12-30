@@ -155,7 +155,7 @@ const FeedPost = ({
             src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${src.url}`}
             width="100%"
             height="100%"
-            frameBorder='0'
+            frameBorder="0"
           />}
 
           <Row className="likes">

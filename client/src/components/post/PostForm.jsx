@@ -122,7 +122,7 @@ const PostForm = ({
             <Grid container direction="column" justify="space-evenly">
               <Grid item>
                 <Grid container justify="flex-start" alignItems="center">
-                  <Avatar className={classes.avatar} src={avatar} alt='' />
+                  <Avatar className={classes.avatar} src={avatar} alt="" />
                   <h4>{name}</h4>
                 </Grid>
               </Grid>
@@ -163,7 +163,7 @@ const PostForm = ({
               </Grid>}
 
               {preview && type === "photo" &&
-              <img className={classes.media} src={preview} alt='' />}
+              <img className={classes.media} src={preview} alt="" />}
               {preview && type === "video" &&
               <video
                 className={classes.media}
@@ -180,7 +180,7 @@ const PostForm = ({
                 src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${preview}`}
                 width="100%"
                 height="100%"
-                frameBorder='0'
+                frameBorder="0"
               />}
 
             </Grid>

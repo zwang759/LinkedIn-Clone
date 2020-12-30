@@ -1,5 +1,5 @@
 # build environment
-FROM node:15.0.1 as build
+FROM node:latest as build
 WORKDIR /client
 ENV PATH /client/node_modules/.bin:$PATH
 COPY /client/package.json ./
@@ -9,13 +9,13 @@ RUN npm install react-scripts@3.4.3 -g --silent
 COPY client/ ./
 RUN npm run build
 
-FROM node:15.0.1
+FROM node:latest
 WORKDIR /app
 COPY --from=build /client/build/ /app/client/build
-COPY package.json /app/package.json
-COPY package-lock.json /app/package-lock.json
+COPY /server/package.json /app/package.json
+COPY /server/package-lock.json /app/package-lock.json
 RUN npm ci --only=prod --silent
-COPY . /app/
+COPY server/ /app/
 
 EXPOSE 5000
 CMD ["npm", "start"]
