@@ -2,7 +2,7 @@
 
 <p> A fake LinkedIn </p>
 
-<p>Click <a href="http://3.236.4.8:5000/">here</a> to live preview.</p>
+<p>Click <a href="http://3.89.217.107:5000">here</a> to live preview.</p>
 
 ## Tech stacks
 
